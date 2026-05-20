@@ -41,7 +41,7 @@ export default function Nav() {
           : 'bg-black/70 backdrop-blur-md border-b border-white/[0.05] py-5'
       }`}
     >
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 flex items-center justify-between gap-8">
+      <div className="max-w-[1600px] mx-auto w-full px-8 md:px-16 flex items-center justify-between gap-8">
 
         {/* ── Logo ── */}
         <a href="#top" className="nav-logo group flex items-center gap-3 flex-shrink-0">
@@ -57,7 +57,7 @@ export default function Nav() {
         </a>
 
         {/* ── Desktop links ── */}
-        <nav className="hidden md:flex items-center gap-1" aria-label="Huvudmeny">
+        <nav className="hidden md:flex items-center gap-1 flex-1 justify-center" aria-label="Huvudmeny">
           {links.map((link) => (
             <a
               key={link.href}
