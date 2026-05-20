@@ -20,7 +20,7 @@ export default function Contact() {
         duration: 1,
         stagger: 0.08,
         ease: 'power4.out',
-        scrollTrigger: { trigger: section.querySelector('.contact-heading'), start: 'top 75%' },
+        scrollTrigger: { trigger: section.querySelector('.contact-heading'), start: 'top 90%', once: true },
       })
 
       gsap.from(section.querySelectorAll('.contact-block'), {
@@ -29,7 +29,7 @@ export default function Contact() {
         duration: 0.9,
         stagger: 0.1,
         ease: 'power3.out',
-        scrollTrigger: { trigger: '.contact-grid', start: 'top 80%' },
+        scrollTrigger: { trigger: '.contact-grid', start: 'top 90%', once: true },
       })
 
       gsap.from(section.querySelector('.contact-form'), {
@@ -37,7 +37,7 @@ export default function Contact() {
         opacity: 0,
         duration: 1,
         ease: 'power3.out',
-        scrollTrigger: { trigger: '.contact-form', start: 'top 80%' },
+        scrollTrigger: { trigger: '.contact-form', start: 'top 90%', once: true },
       })
 
       // Background image parallax
