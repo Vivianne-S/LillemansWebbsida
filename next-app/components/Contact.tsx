@@ -230,14 +230,16 @@ export default function Contact() {
           </form>
         </div>
 
-        {/* Footer */}
-        <div className="mt-24 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-stone-700 text-xs">
-            © {new Date().getFullYear()} Lillemans Plåt AB. Alla rättigheter förbehållna.
-          </p>
-          <p className="text-stone-700 text-xs tracking-[0.3em] uppercase">
-            Premium Plåtslageri sedan 2005
-          </p>
+        {/* Footer image */}
+        <div className="mt-24 pt-8 border-t border-[var(--border)]">
+          <Image
+            src="/images/footer.png"
+            alt="Lillemans Plåt footer"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto block"
+          />
         </div>
       </div>
     </section>
