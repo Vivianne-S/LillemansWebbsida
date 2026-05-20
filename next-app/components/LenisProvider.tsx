@@ -14,6 +14,10 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
+    // Skip Lenis on touch devices — native scroll is faster
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
+    if (isTouchDevice) return
+
     const lenis = new Lenis({
       lerp: 0.08,
       smoothWheel: true,
@@ -30,7 +34,6 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
     const rafId = requestAnimationFrame(raf)
 
-    // Intercept all anchor-link clicks so Lenis handles smooth scroll
     function handleAnchorClick(e: MouseEvent) {
       const anchor = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null
       if (!anchor) return
