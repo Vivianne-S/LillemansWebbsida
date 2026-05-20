@@ -90,7 +90,7 @@ export default function Contact() {
           <p className="eyebrow mb-6">Kontakt</p>
           <h2 className="leading-[0.9] tracking-tight font-bold text-stone-100">
             {['Låt', 'oss', 'prata', 'tak.'].map((w) => (
-              <span key={w} className="inline-block overflow-hidden mr-[0.2em]">
+              <span key={w} className="inline-block overflow-hidden mr-[0.35em]">
                 <span className="contact-word inline-block text-[clamp(3rem,8vw,9rem)]">
                   {w === 'tak.' ? (
                     <span>
