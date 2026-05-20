@@ -92,13 +92,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/25" />
       </div>
 
-      {/* Left edge numbers */}
-      <div className="absolute left-5 inset-y-0 hidden lg:flex flex-col items-center justify-between py-32 z-10 pointer-events-none">
-        <span className="text-[var(--gold)]/40 text-[9px] font-mono tracking-widest [writing-mode:vertical-rl]">01</span>
-        <div className="w-px flex-1 my-3 bg-[var(--gold)]/15" />
-        <span className="text-[var(--gold)]/40 text-[9px] font-mono tracking-widest [writing-mode:vertical-rl]">06</span>
-      </div>
-
       {/* Content */}
       <div
         ref={contentRef}
