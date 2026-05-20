@@ -65,7 +65,7 @@ export default function ScrollNarrative() {
           scrollTrigger: {
             trigger: panel,
             start: 'top 72%',
-            toggleActions: 'play none none reverse',
+            toggleActions: 'play none none none',
           },
         })
 
