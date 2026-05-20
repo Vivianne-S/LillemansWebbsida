@@ -40,7 +40,7 @@ export default function Services() {
 
 
   return (
-    <section ref={sectionRef} id="services" data-section="Tjänster" className="bg-black py-28 md:py-36 border-t border-[var(--border)]">
+    <section ref={sectionRef} id="services" data-section="Tjänster" className="py-16 md:py-28 lg:py-36 border-t border-[var(--border)]" style={{ background: '#161410' }}>
       <div className="max-w-screen-xl mx-auto px-6 md:px-14">
         {/* Header */}
         <div className="services-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">

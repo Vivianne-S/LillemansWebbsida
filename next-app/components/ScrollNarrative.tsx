@@ -51,7 +51,7 @@ export default function ScrollNarrative() {
         {/* Section intro */}
         <div className="mb-20 md:mb-28 max-w-xl">
           <p className="eyebrow mb-4">Kvalitet & Precision</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-100 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-stone-100 leading-tight">
             Detaljer som håller.<br />Resultat som syns.
           </h2>
         </div>
@@ -84,16 +84,16 @@ export default function ScrollNarrative() {
 
               {/* Text side */}
               <div
-                className={`panel-text bg-[var(--surface-2)] px-8 py-10 flex flex-col justify-start gap-4 ${
+                className={`panel-text bg-[var(--surface-2)] px-5 py-6 md:px-8 md:py-10 flex flex-col justify-start gap-4 ${
                   i % 2 === 1 ? '[direction:ltr]' : ''
                 }`}
               >
                 <span className="panel-line block w-6 h-px bg-[var(--gold)]" />
                 <p className="panel-label text-xs tracking-[0.2em] uppercase text-[var(--gold)] font-medium">{panel.label}</p>
-                <h3 className="panel-title text-3xl md:text-4xl font-bold text-stone-100 leading-snug whitespace-pre-line">
+                <h3 className="panel-title text-2xl md:text-3xl lg:text-4xl font-bold text-stone-100 leading-snug whitespace-pre-line">
                   {panel.title}
                 </h3>
-                <p className="panel-body text-stone-400 text-base leading-relaxed">
+                <p className="panel-body text-stone-400 text-sm md:text-base leading-relaxed">
                   {panel.body}
                 </p>
                 <ul className="mt-4 flex flex-col gap-3">

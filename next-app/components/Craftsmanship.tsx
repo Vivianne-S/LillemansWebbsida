@@ -74,12 +74,12 @@ export default function Craftsmanship() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="craftsmanship" data-section="Om oss" className="bg-[var(--surface)] py-28 md:py-36">
+    <section ref={sectionRef} id="craftsmanship" data-section="Om oss" className="bg-[var(--surface)] py-16 md:py-28 lg:py-36">
       <div className="max-w-screen-xl mx-auto px-6 md:px-14">
         {/* Centered intro text */}
         <div className="craft-split text-center max-w-3xl mx-auto mb-20">
           <p className="craft-text-item eyebrow mb-5">Hantverk & Precision</p>
-          <h2 className="craft-text-item text-4xl md:text-5xl lg:text-6xl font-bold text-stone-100 leading-tight mb-8">
+          <h2 className="craft-text-item text-3xl md:text-4xl lg:text-6xl font-bold text-stone-100 leading-tight mb-8">
             Kvalitet som<br />syns i varje<br />detalj
           </h2>
           <p className="craft-text-item text-stone-500 text-base leading-relaxed mb-10">

@@ -97,7 +97,7 @@ export default function IdeaTak() {
       className="relative bg-black will-change-transform"
     >
       {/* ── Header ── */}
-      <div className="ideatak-header max-w-screen-xl mx-auto px-8 md:px-16 lg:px-20 pt-20 pb-10">
+      <div className="ideatak-header max-w-screen-xl mx-auto px-5 md:px-16 lg:px-20 pt-10 md:pt-16 pb-4 md:pb-8">
 
         {/* Eyebrow */}
         <div className="flex items-center gap-4 mb-6">

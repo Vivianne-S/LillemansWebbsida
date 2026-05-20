@@ -72,14 +72,14 @@ export default function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="process" data-section="Process" className="bg-[var(--surface)] py-28 md:py-36 border-t border-[var(--border)]">
+    <section ref={sectionRef} id="process" data-section="Process" className="bg-[var(--surface)] py-16 md:py-28 lg:py-36 border-t border-[var(--border)]">
       <div className="max-w-screen-xl mx-auto px-6 md:px-14">
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-20">
           {/* Left: sticky header + image */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
             <div className="process-header">
               <p className="eyebrow mb-5">Vår Process</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-stone-100 leading-tight mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-stone-100 leading-tight mb-6">
                 Från idé<br />till färdigt<br />tak
               </h2>
               <p className="text-stone-500 text-base leading-relaxed mb-8">

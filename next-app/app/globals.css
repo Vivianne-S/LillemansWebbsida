@@ -22,9 +22,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
-    min-width: 1200px;
-  }
 
   ::selection {
     background: var(--gold);

@@ -107,7 +107,7 @@ export default function Hero() {
                 <span key={word} className="block overflow-hidden pt-2">
                   <span
                     className="hero-word block will-change-transform"
-                    style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)' }}
+                    style={{ fontSize: 'clamp(2.4rem, 8vw, 5rem)' }}
                   >
                     {word}
                   </span>
