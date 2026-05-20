@@ -143,7 +143,7 @@ export default function Process() {
           {/* Right: timeline */}
           <div className="lg:col-span-7 timeline relative">
             {/* Vertical line */}
-            <div className="absolute left-[18px] top-2 bottom-2 w-px bg-[var(--border)]">
+            <div className="absolute left-[18px] top-2 bottom-2 w-px bg-[var(--border)] overflow-hidden">
               <div ref={lineRef} className="absolute inset-0 bg-[var(--gold)]" />
             </div>
 
