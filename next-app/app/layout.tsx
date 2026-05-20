@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sv" className={`${spaceGrotesk.variable} grain-overlay`}>
+    <html lang="sv" className={`${spaceGrotesk.variable} grain-overlay dark`}>
       <body className="bg-[var(--bg)] text-[var(--text)] antialiased overflow-x-hidden">
         <LenisProvider>
           <Nav />
