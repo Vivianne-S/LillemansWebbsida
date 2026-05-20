@@ -1,9 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
+import { useEffect, useRef } from 'react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
-import Lightbox from './Lightbox'
 
 const steps = [
   {
@@ -50,7 +48,6 @@ const steps = [
 
 export default function Process() {
   const sectionRef = useRef<HTMLElement>(null)
-  const [lightbox, setLightbox] = useState(false)
   const lineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -88,20 +85,12 @@ export default function Process() {
         scrollTrigger: { trigger: '.timeline', start: 'top 75%', once: true },
       })
 
-      gsap.from(section.querySelector('.process-img'), {
-        opacity: 0,
-        scale: 0.97,
-        duration: 1.2,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.process-img', start: 'top 80%' },
-      })
     }, section)
 
     return () => ctx.revert()
   }, [])
 
   return (
-    <>
     <section ref={sectionRef} id="process" data-section="Process" className="bg-[var(--surface)] py-28 md:py-36 border-t border-[var(--border)]">
       <div className="max-w-screen-xl mx-auto px-6 md:px-14">
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-20">
@@ -124,19 +113,6 @@ export default function Process() {
               </a>
             </div>
 
-            <div
-              className="process-img mt-10 hidden lg:block cursor-zoom-in"
-              onClick={() => setLightbox(true)}
-            >
-              <Image
-                src="/images/ide_fardigt_tak.jpeg"
-                alt="Från idé till färdigt tak"
-                width={0}
-                height={0}
-                sizes="33vw"
-                className="w-full h-auto block transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
           </div>
 
           {/* Right: timeline */}
@@ -166,10 +142,5 @@ export default function Process() {
         </div>
       </div>
     </section>
-
-    {lightbox && (
-      <Lightbox src="/images/ide_fardigt_tak.jpeg" alt="Från idé till färdigt tak" onClose={() => setLightbox(false)} />
-    )}
-    </>
   )
 }
