@@ -53,6 +53,9 @@ export const metadata: Metadata = {
 export const viewport = {
   width: 1200,
   initialScale: 1,
+  minimumScale: 0.25,
+  maximumScale: 1,
+  userScalable: false,
 }
 
 const jsonLd = {
