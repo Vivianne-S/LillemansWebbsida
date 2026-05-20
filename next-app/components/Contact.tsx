@@ -12,8 +12,12 @@ export default function Contact() {
     const section = sectionRef.current
     if (!section) return
 
+    const isTouch = window.matchMedia('(pointer: coarse)').matches
+
+    // On touch/mobile: skip all animations so content is always visible
+    if (isTouch) return
+
     const ctx = gsap.context(() => {
-      // Big headline letter animation
       const letters = section.querySelectorAll('.contact-word')
       gsap.from(letters, {
         yPercent: 100,
@@ -40,16 +44,10 @@ export default function Contact() {
         scrollTrigger: { trigger: '.contact-form', start: 'top 90%', once: true },
       })
 
-      // Background image parallax
       gsap.to(section.querySelector('.contact-bg'), {
         yPercent: 20,
         ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
+        scrollTrigger: { trigger: section, start: 'top bottom', end: 'bottom top', scrub: true },
       })
     }, section)
 
