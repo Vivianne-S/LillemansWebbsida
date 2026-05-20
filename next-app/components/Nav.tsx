@@ -5,7 +5,6 @@ const links = [
   { label: 'Hem', href: '#top' },
   { label: 'Tjänster', href: '#services' },
   { label: 'Om oss', href: '#craftsmanship' },
-  { label: 'Kontakt', href: '#contact' },
 ]
 
 export default function Nav() {
