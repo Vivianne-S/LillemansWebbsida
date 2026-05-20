@@ -23,7 +23,7 @@
   }
 
   body {
-    overflow-x: hidden;
+    min-width: 1200px;
   }
 
   ::selection {

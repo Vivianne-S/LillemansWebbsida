@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   keywords: 'plåtslagare Göteborg, bandtäckning, plåttak, fasadplåt, takarbeten',
 }
 
+export const viewport = {
+  width: 1200,
+  initialScale: 1,
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv" className={`${spaceGrotesk.variable} grain-overlay dark`}>
