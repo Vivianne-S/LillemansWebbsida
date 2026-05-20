@@ -102,9 +102,9 @@ export default function Hero() {
       {/* Content */}
       <div
         ref={contentRef}
-        className="relative z-10 h-full flex flex-col justify-start pt-20 md:pt-24 px-8 md:px-16 lg:px-20"
+        className="relative z-10 h-full flex flex-col justify-center pt-16 px-8 md:px-16 lg:px-20"
       >
-        <div className="max-w-screen-xl mx-auto w-full">
+        <div className="w-full">
           <p className="hero-eyebrow eyebrow mb-4">
             Plåtarbete med kvalitet i varje detalj
           </p>
@@ -114,7 +114,7 @@ export default function Hero() {
                 <span key={word} className="block overflow-hidden pt-2">
                   <span
                     className="hero-word block will-change-transform"
-                    style={{ fontSize: 'clamp(3rem, 6.5vw, 7rem)' }}
+                    style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)' }}
                   >
                     {word}
                   </span>
@@ -123,7 +123,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-lead text-stone-400 text-sm md:text-base max-w-xs leading-relaxed mb-8">
-            Vi skapar hållbara lösningar i plåt för tak, fasader och detaljer —
+            Vi skapar hållbara lösningar i plåt för tak, fasader och detaljer
             med precision, känsla och stolthet i varje projekt.
           </p>
 
