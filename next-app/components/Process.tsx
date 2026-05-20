@@ -79,14 +79,13 @@ export default function Process() {
         },
       })
 
-      section.querySelectorAll('.step-item').forEach((step, i) => {
-        gsap.from(step, {
-          x: -30,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: step, start: 'top 84%' },
-        })
+      gsap.from(section.querySelectorAll('.step-item'), {
+        x: -20,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.12,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '.timeline', start: 'top 75%', once: true },
       })
 
       gsap.from(section.querySelector('.process-img'), {
