@@ -54,6 +54,9 @@ export default function Process() {
     const section = sectionRef.current
     if (!section) return
 
+    const isTouch = window.matchMedia('(pointer: coarse)').matches
+    if (isTouch) return
+
     const ctx = gsap.context(() => {
       gsap.from(section.querySelector('.process-header'), {
         y: 40,
