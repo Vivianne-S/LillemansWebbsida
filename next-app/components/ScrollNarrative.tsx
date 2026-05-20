@@ -51,33 +51,30 @@ export default function ScrollNarrative() {
     const ctx = gsap.context(() => {
       section.querySelectorAll('.narrative-panel').forEach((panel) => {
         const img = panel.querySelector('.panel-img')
-        const imgInner = panel.querySelector('.panel-img-inner')
         const textBox = panel.querySelector('.panel-text')
         const label = panel.querySelector('.panel-label')
         const title = panel.querySelector('.panel-title')
         const body = panel.querySelector('.panel-body')
         const line = panel.querySelector('.panel-line')
 
-        // Hide text box initially
-        gsap.set(textBox, { opacity: 0, x: 30 })
+        // Start hidden
+        gsap.set([img, textBox], { opacity: 0, y: 50 })
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: panel,
-            start: 'top 72%',
+            start: 'top 78%',
             toggleActions: 'play none none none',
           },
         })
 
-        // Image comes in first
-        tl.from(img, { scaleX: 0, transformOrigin: 'left center', duration: 1.0, ease: 'power4.inOut' })
-          .from(imgInner, { scale: 1.25, duration: 1.4, ease: 'power3.out' }, 0)
-          // Text box slides in after image
-          .to(textBox, { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }, 0.75)
-          .from(line, { scaleX: 0, transformOrigin: 'left center', duration: 0.5, ease: 'power3.out' }, 0.85)
-          .from(label, { opacity: 0, x: -15, duration: 0.5, ease: 'power3.out' }, 0.9)
-          .from(title, { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out' }, 0.95)
-          .from(body, { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, 0.7)
+        // Whole panel fades+slides up cleanly, then text follows
+        tl.to(img, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+          .to(textBox, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.3)
+          .from(line, { scaleX: 0, transformOrigin: 'left center', duration: 0.4, ease: 'power3.out' }, 0.5)
+          .from(label, { opacity: 0, y: 10, duration: 0.4, ease: 'power3.out' }, 0.55)
+          .from(title, { opacity: 0, y: 14, duration: 0.5, ease: 'power3.out' }, 0.62)
+          .from(body, { opacity: 0, y: 10, duration: 0.5, ease: 'power3.out' }, 0.7)
       })
     }, section)
 
