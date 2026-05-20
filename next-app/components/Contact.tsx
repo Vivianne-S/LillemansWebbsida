@@ -12,29 +12,7 @@ export default function Contact() {
     const section = sectionRef.current
     if (!section) return
 
-    const isTouch = window.matchMedia('(pointer: coarse)').matches
-
-    // On touch/mobile: skip all animations so content is always visible
-    if (isTouch) return
-
     const ctx = gsap.context(() => {
-      gsap.from(section.querySelectorAll('.contact-block'), {
-        y: 40,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.contact-grid', start: 'top 90%', once: true },
-      })
-
-      gsap.from(section.querySelector('.contact-form'), {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.contact-form', start: 'top 90%', once: true },
-      })
-
       gsap.to(section.querySelector('.contact-bg'), {
         yPercent: 20,
         ease: 'none',

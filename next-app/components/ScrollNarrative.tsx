@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
-import { gsap, ScrollTrigger } from '@/lib/gsap'
 import Lightbox from './Lightbox'
 
 const panels = [
@@ -44,43 +43,6 @@ export default function ScrollNarrative() {
   const sectionRef = useRef<HTMLElement>(null)
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
-  useEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
-
-    const isTouch = window.matchMedia('(pointer: coarse)').matches
-    if (isTouch) return
-
-    const ctx = gsap.context(() => {
-      section.querySelectorAll('.narrative-panel').forEach((panel) => {
-        const img = panel.querySelector('.panel-img')
-        const textBox = panel.querySelector('.panel-text')
-        const label = panel.querySelector('.panel-label')
-        const title = panel.querySelector('.panel-title')
-        const body = panel.querySelector('.panel-body')
-        const line = panel.querySelector('.panel-line')
-
-        gsap.set([img, textBox], { opacity: 0, y: 50 })
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: panel,
-            start: 'top 78%',
-            toggleActions: 'play none none none',
-          },
-        })
-
-        tl.to(img, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
-          .to(textBox, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.3)
-          .from(line, { scaleX: 0, transformOrigin: 'left center', duration: 0.4, ease: 'power3.out' }, 0.5)
-          .from(label, { opacity: 0, y: 10, duration: 0.4, ease: 'power3.out' }, 0.55)
-          .from(title, { opacity: 0, y: 14, duration: 0.5, ease: 'power3.out' }, 0.62)
-          .from(body, { opacity: 0, y: 10, duration: 0.5, ease: 'power3.out' }, 0.7)
-      })
-    }, section)
-
-    return () => ctx.revert()
-  }, [])
 
   return (
     <>

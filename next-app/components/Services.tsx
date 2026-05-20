@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { gsap, ScrollTrigger } from '@/lib/gsap'
+import { useRef } from 'react'
 
 const services = [
   {
@@ -39,34 +38,6 @@ const services = [
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
-
-    const isTouch = window.matchMedia('(pointer: coarse)').matches
-    if (isTouch) return
-
-    const ctx = gsap.context(() => {
-      gsap.from(section.querySelector('.services-header'), {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: section, start: 'top 75%' },
-      })
-
-      gsap.from(section.querySelectorAll('.service-card'), {
-        y: 60,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.08,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.services-grid', start: 'top 80%' },
-      })
-    }, section)
-
-    return () => ctx.revert()
-  }, [])
 
   return (
     <section ref={sectionRef} id="services" data-section="Tjänster" className="bg-black py-28 md:py-36 border-t border-[var(--border)]">

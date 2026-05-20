@@ -54,19 +54,7 @@ export default function Process() {
     const section = sectionRef.current
     if (!section) return
 
-    const isTouch = window.matchMedia('(pointer: coarse)').matches
-    if (isTouch) return
-
     const ctx = gsap.context(() => {
-      gsap.from(section.querySelector('.process-header'), {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: section, start: 'top 75%' },
-      })
-
-      // Animated progress line
       gsap.from(lineRef.current, {
         scaleY: 0,
         transformOrigin: 'top',
@@ -78,16 +66,6 @@ export default function Process() {
           scrub: 0.5,
         },
       })
-
-      gsap.from(section.querySelectorAll('.step-item'), {
-        x: -20,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.12,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.timeline', start: 'top 75%', once: true },
-      })
-
     }, section)
 
     return () => ctx.revert()
