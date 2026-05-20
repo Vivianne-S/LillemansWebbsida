@@ -110,7 +110,7 @@ export default function Hero() {
           </p>
 
           <h1 className="mb-5 leading-[0.92] tracking-tight font-bold text-stone-50">
-            {['LILLEMANS', 'PLÅT'].map((word) => (
+            {['LILLEMANS', 'BYGGNADS-', 'PLÅTSLAGERI'].map((word) => (
                 <span key={word} className="block overflow-hidden pt-2">
                   <span
                     className="hero-word block will-change-transform"

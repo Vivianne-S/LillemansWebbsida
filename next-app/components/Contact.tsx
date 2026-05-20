@@ -18,15 +18,6 @@ export default function Contact() {
     if (isTouch) return
 
     const ctx = gsap.context(() => {
-      const letters = section.querySelectorAll('.contact-word')
-      gsap.from(letters, {
-        yPercent: 100,
-        duration: 1,
-        stagger: 0.08,
-        ease: 'power4.out',
-        scrollTrigger: { trigger: section.querySelector('.contact-heading'), start: 'top 90%', once: true },
-      })
-
       gsap.from(section.querySelectorAll('.contact-block'), {
         y: 40,
         opacity: 0,
@@ -88,20 +79,8 @@ export default function Contact() {
         {/* Massive heading */}
         <div className="contact-heading overflow-hidden mb-20">
           <p className="eyebrow mb-6">Kontakt</p>
-          <h2 className="leading-[0.9] tracking-tight font-bold text-stone-100 flex flex-wrap gap-x-[0.25em] gap-y-2">
-            {['Låt', 'oss', 'prata', 'tak.'].map((w) => (
-              <span key={w} className="overflow-hidden block">
-                <span className="contact-word block text-[clamp(3rem,8vw,9rem)]">
-                  {w === 'tak.' ? (
-                    <span>
-                      tak<span className="text-[var(--gold)]">.</span>
-                    </span>
-                  ) : (
-                    w
-                  )}
-                </span>
-              </span>
-            ))}
+          <h2 className="leading-tight tracking-tight font-bold text-stone-100 text-[clamp(3rem,8vw,9rem)]">
+            Låt oss prata tak<span className="text-[var(--gold)]">.</span>
           </h2>
         </div>
 
