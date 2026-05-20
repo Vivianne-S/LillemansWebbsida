@@ -88,10 +88,10 @@ export default function Contact() {
         {/* Massive heading */}
         <div className="contact-heading overflow-hidden mb-20">
           <p className="eyebrow mb-6">Kontakt</p>
-          <h2 className="leading-[0.9] tracking-tight font-bold text-stone-100">
+          <h2 className="leading-[0.9] tracking-tight font-bold text-stone-100 flex flex-wrap gap-x-[0.25em] gap-y-2">
             {['Låt', 'oss', 'prata', 'tak.'].map((w) => (
-              <span key={w} className="inline-block overflow-hidden mr-[0.35em]">
-                <span className="contact-word inline-block text-[clamp(3rem,8vw,9rem)]">
+              <span key={w} className="overflow-hidden block">
+                <span className="contact-word block text-[clamp(3rem,8vw,9rem)]">
                   {w === 'tak.' ? (
                     <span>
                       tak<span className="text-[var(--gold)]">.</span>
