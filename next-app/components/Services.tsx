@@ -82,11 +82,11 @@ export default function Services() {
         </div>
 
         {/* Grid */}
-        <div className="services-grid grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)]">
+        <div className="services-grid grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <div
               key={s.num}
-              className="service-card group bg-black p-8 md:p-10 hover:bg-[var(--surface)] transition-colors duration-500 cursor-default"
+              className="service-card group bg-black p-8 md:p-10 border border-[var(--border)] hover:bg-[var(--surface)] transition-colors duration-500 cursor-default"
             >
               <div className="flex items-start justify-between mb-8">
                 <span className="text-[var(--gold)] text-[0.65rem] font-mono tracking-widest">{s.num}</span>
@@ -111,25 +111,6 @@ export default function Services() {
               </ul>
             </div>
           ))}
-
-          {/* CTA card */}
-          <div className="service-card bg-[var(--gold)] p-8 md:p-10 flex flex-col justify-between">
-            <div>
-              <p className="text-black/50 text-[0.65rem] tracking-[0.3em] uppercase mb-8">Redo att börja?</p>
-              <h3 className="text-2xl md:text-3xl font-bold text-black leading-tight mb-4">
-                Begär en fri offert idag
-              </h3>
-              <p className="text-black/60 text-sm leading-relaxed">
-                Svar inom 24 timmar. Kostnadsfri besiktning i Göteborg.
-              </p>
-            </div>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-3 bg-black text-[var(--gold)] text-xs font-semibold tracking-[0.2em] uppercase px-6 py-4 hover:bg-stone-900 transition-colors duration-300 mt-8 w-fit"
-            >
-              Kontakta oss <span>→</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
