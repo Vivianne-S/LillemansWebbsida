@@ -215,7 +215,7 @@ export default function Contact() {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-full h-auto block max-h-[140px] object-cover object-center"
+            className="w-full h-auto block max-h-[200px] object-cover object-center"
           />
         </div>
       </div>
