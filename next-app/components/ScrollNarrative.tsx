@@ -52,10 +52,14 @@ export default function ScrollNarrative() {
       section.querySelectorAll('.narrative-panel').forEach((panel) => {
         const img = panel.querySelector('.panel-img')
         const imgInner = panel.querySelector('.panel-img-inner')
+        const textBox = panel.querySelector('.panel-text')
         const label = panel.querySelector('.panel-label')
         const title = panel.querySelector('.panel-title')
         const body = panel.querySelector('.panel-body')
         const line = panel.querySelector('.panel-line')
+
+        // Hide text box initially
+        gsap.set(textBox, { opacity: 0, x: 30 })
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -65,11 +69,14 @@ export default function ScrollNarrative() {
           },
         })
 
+        // Image comes in first
         tl.from(img, { scaleX: 0, transformOrigin: 'left center', duration: 1.0, ease: 'power4.inOut' })
           .from(imgInner, { scale: 1.25, duration: 1.4, ease: 'power3.out' }, 0)
-          .from(line, { scaleX: 0, transformOrigin: 'left center', duration: 0.6, ease: 'power3.out' }, 0.4)
-          .from(label, { opacity: 0, x: -20, duration: 0.7, ease: 'power3.out' }, 0.5)
-          .from(title, { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out' }, 0.55)
+          // Text box slides in after image
+          .to(textBox, { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }, 0.75)
+          .from(line, { scaleX: 0, transformOrigin: 'left center', duration: 0.5, ease: 'power3.out' }, 0.85)
+          .from(label, { opacity: 0, x: -15, duration: 0.5, ease: 'power3.out' }, 0.9)
+          .from(title, { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out' }, 0.95)
           .from(body, { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, 0.7)
       })
     }, section)
@@ -117,7 +124,7 @@ export default function ScrollNarrative() {
 
               {/* Text side */}
               <div
-                className={`bg-[var(--surface-2)] px-8 py-10 flex flex-col justify-start gap-4 ${
+                className={`panel-text bg-[var(--surface-2)] px-8 py-10 flex flex-col justify-start gap-4 ${
                   i % 2 === 1 ? '[direction:ltr]' : ''
                 }`}
               >
