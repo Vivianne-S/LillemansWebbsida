@@ -126,17 +126,17 @@ export default function ScrollNarrative() {
                 }`}
               >
                 <span className="panel-line block w-6 h-px bg-[var(--gold)]" />
-                <p className="panel-label text-[10px] tracking-[0.2em] uppercase text-[var(--gold)] font-medium">{panel.label}</p>
-                <h3 className="panel-title text-2xl md:text-3xl font-bold text-stone-100 leading-snug whitespace-pre-line">
+                <p className="panel-label text-xs tracking-[0.2em] uppercase text-[var(--gold)] font-medium">{panel.label}</p>
+                <h3 className="panel-title text-3xl md:text-4xl font-bold text-stone-100 leading-snug whitespace-pre-line">
                   {panel.title}
                 </h3>
-                <p className="panel-body text-stone-400 text-sm leading-relaxed">
+                <p className="panel-body text-stone-400 text-base leading-relaxed">
                   {panel.body}
                 </p>
-                <ul className="mt-4 flex flex-col gap-2">
+                <ul className="mt-4 flex flex-col gap-3">
                   {panel.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-xs text-stone-500">
-                      <span className="mt-1 w-1 h-1 rounded-full bg-[var(--gold)] shrink-0" />
+                    <li key={point} className="flex items-start gap-2 text-sm text-stone-500">
+                      <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--gold)] shrink-0" />
                       {point}
                     </li>
                   ))}
